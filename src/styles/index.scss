@@ -1,0 +1,72 @@
+@import './global.scss';
+
+// /*---------------------------基础样式---------------------------------*/
+
+* {margin: 0;padding: 0;}
+body,html,#app{height: 100%;}
+body {color: $default-color;font-size: $default-size;font-family: "microsoft yahei";}
+pre {font-family: "microsoft yahei";line-height: 20px;white-space: pre-wrap;word-wrap: break-word;}
+img {display: block;}
+.pointer {cursor: pointer;}
+.text-right {text-align: right;}
+.icon{width: 16px;height: 16px;}
+svg.icon{width: 1em; height: 1em;vertical-align: -0.15em;fill: currentColor;overflow: hidden;}
+
+/*----------谷歌浏览器修改滚动条样式----------*/
+::-webkit-scrollbar {width: 8px;height: 8px;background: #fff;}
+::-webkit-scrollbar-thumb {background-color: $common-border;border-radius: 3px;}
+
+/*----------弹性盒模型----------*/
+.flex {display: flex;flex-direction: row;}
+.flex-center {display: flex;flex-direction: row;align-items: center;}
+.flex-end {display: flex;align-items: flex-end;}
+.flex-center-end {display: flex;flex-direction: row;align-items: center;justify-content: flex-end;}
+.flex-center-between {display: flex;flex-direction: row;align-items: center;justify-content: space-between;}
+.flex-center-center {display: flex;align-items: center;justify-content: center;}
+   
+/*----------字体颜色  红-黄-蓝-绿-灰----------*/
+.error-font {color: $error-color !important;}
+.warn-font {color: $warn-color !important;}
+.primary-font {color: $primary-color !important;}
+.success-font {color: $success-color !important;}
+.gray-font {color: $gray-color !important;}
+.icon-font {color: $common-placeholder !important;}
+.cancel-font {color: $common-placeholder !important;cursor: default !important;}
+
+
+/*---------------------------页面公共样式---------------------------*/
+/* 容器 --- 高度需要减去title 72,footer 50 */
+.container {width: calc(100% - 32px);max-width: 1600px;min-height: calc(80vh);  background: #fff;box-sizing: border-box;padding: 24px;margin: 0 16px;border-radius: 8px;}
+
+/* login页------登录input */
+.login-input input{height: 50px;}
+.login-input .el-input__clear{line-height: 50px;}
+
+/* index页------菜单二级侧栏title，arrow箭头 隐藏 */
+.el-menu-item-group__title,.el-submenu__icon-arrow {display: none;}
+/* 清除一级菜单、二级菜单focus */
+.el-menu-item:focus, .el-menu-item:hover, .el-submenu__title:focus, .el-submenu__title:hover {background: none;}
+/* 清除菜单过渡效果 */
+.el-menu-item{transition: none;}
+/*
+ * index页----- 一级侧栏配置
+ *一级侧栏 & 带二级侧栏的一级侧栏
+ */
+/* 默认状态 */
+.el-menu-item,.el-submenu__title{height: 54px;line-height: 54px;padding: 0 8px 0 12px!important;border-left: 4px solid transparent;}
+/* 悬停 */
+.el-menu-item:hover,.el-submenu__title:hover{background: transparent;}
+.el-menu-item .hover span,.el-submenu__title .hover span{color: #fff;}
+/* 选中 */
+.el-menu-item.is-active{background: $index-side-act-background!important;color: $index-side-act-font!important;border-color: $index-side-act-border!important;}
+/*
+ * index页----- 二级侧栏配置
+ */
+/* 侧栏背景 */
+.el-menu{background: $index-subside-background;}
+/* 默认状态 */
+.el-submenu .el-menu-item{height: 46px;line-height: 46px;padding: 0 32px 0 36px!important;color: $index-subside-font;border-left: 4px solid transparent;}
+/* 悬停 */
+.el-submenu .el-menu-item:hover{color: $index-subside-hover-font!important;background: $index-subside-hover-background;}
+/* 选中 */
+.el-submenu .el-menu-item:active{color: $index-subside-act-font!important;background: $index-subside-act-background;border-color: $index-subside-act-border!important;}
