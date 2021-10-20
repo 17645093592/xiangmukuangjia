@@ -114,7 +114,7 @@ export default {
   methods: {
     async getmenus() {
       let res = await getmenus()
-      console.log(res, '')
+      // console.log(res, '')
       res.data.map((item,index)=>{
           this.iconList.forEach((items,idx)=>{
             if(index == idx){
@@ -124,6 +124,8 @@ export default {
       })
       this.sideList = res.data
       this.treeList = this.treeConvertList(res.data)
+       this.changeRouter()
+
     },
     // 树型转换线型
     treeConvertList(root) {

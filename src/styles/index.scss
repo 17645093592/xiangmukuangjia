@@ -7,6 +7,7 @@ body,html,#app{height: 100%;}
 body {color: $default-color;font-size: $default-size;font-family: "microsoft yahei";}
 pre {font-family: "microsoft yahei";line-height: 20px;white-space: pre-wrap;word-wrap: break-word;}
 img {display: block;}
+li{list-style-type:none;}
 .pointer {cursor: pointer;}
 .text-right {text-align: right;}
 .icon{width: 16px;height: 16px;}

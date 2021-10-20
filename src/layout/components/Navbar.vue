@@ -42,6 +42,7 @@ export default {
           type: 'warning'
         }).then(() => {
           localStorage.removeItem('token')
+          sessionStorage.removeItem('tag')
           this.$router.push('/')
           this.$message({
             type: 'success',
