@@ -93,6 +93,49 @@ export default class utils {
    * @param {Boolean} isDeep 是否需要递归 默认false
    *
    */
+  //  对象去重
+  static removeObj(arr) {
+    const result = [];
+    const duplicatesIndices = []
+    arr.forEach((current, index) => {
+      if (duplicatesIndices.includes(index)) return;
+      result.push(current);
+
+      for (let comparisonIndex = index + 1; comparisonIndex < arr.length; comparisonIndex++) {
+        const comparison = arr[comparisonIndex];
+        const currentKeys = Object.keys(current);
+        const comparisonKeys = Object.keys(comparison);
+
+        if (currentKeys.length !== comparisonKeys.length) continue;
+
+        const currentKeysString = currentKeys.sort().join('').toLowerCase();
+        const comparisonKeysString = comparisonKeys.sort().join('').toLowerCase();
+        if (currentKeysString !== comparisonKeysString) continue;
+
+        let valueSequal = true;
+        for (let i = 0; i < currentKeys.length; i++) {
+          const key = currentKeys[i];
+          if (current[key] !== comparison[key]) {
+            valueSequal = false;
+            break;
+          }
+        }
+        if (valueSequal) duplicatesIndices.push(comparisonIndex);
+      }
+    })
+    return result
+  }
+  // var arr=[2,8,5,0,5,2,6,7,2];
+  // 数组字符串去重
+  static unique1(arr) {
+    var hash = [];
+    for (var i = 0; i < arr.length; i++) {
+      if (hash.indexOf(arr[i]) == -1) {
+        hash.push(arr[i]);
+      }
+    }
+    return hash;
+  }
   static cloneObj(obj = {}, isDeep = false) {
     // 默认直接序列化 返序列化
     if (!isDeep) return JSON.parse(JSON.stringify(obj))
@@ -144,9 +187,9 @@ export default class utils {
    */
   static getObjParam(obj, type, index = 0) {
     if (type != 'key' && type != 'value') return ''
-    return type == 'key'
-      ? Object.keys(obj)[index]
-      : obj[Object.keys(obj)[index]]
+    return type == 'key' ?
+      Object.keys(obj)[index] :
+      obj[Object.keys(obj)[index]]
   }
 
   // ------------------------------验证信息-------------------------------------
@@ -531,7 +574,9 @@ export default class utils {
    *
    */
   static goIndex() {
-    router.push({ name: global.INDEX_PAGE })
+    router.push({
+      name: global.INDEX_PAGE
+    })
   }
 
   /**
@@ -539,7 +584,9 @@ export default class utils {
    *
    */
   static goLogin() {
-    router.push({ name: global.LOGIN_PAGE })
+    router.push({
+      name: global.LOGIN_PAGE
+    })
   }
 
   /**

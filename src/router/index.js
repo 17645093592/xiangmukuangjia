@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 Vue.use(Router)
 
 // 避免点击相同路由时报错 NavigationDuplicated
@@ -25,11 +24,21 @@ export default new Router({
           path: '/users',
           name: 'users',
           component: ()=>import('@/views/users'),
+           meta: { title: '用户列表', first: true }
         },
         {
           path: '/roles',
           name: 'roles',
-          component: ()=>import('@/views/bb'),
+          component: ()=>import('@/views/roles'),
+          meta: { title: '角色列表', first: true }
+
+        },
+        {
+          path: '/rights',
+          name: 'rights',
+          component: ()=>import('@/views/rights'),
+          meta: { title: '权限列表', first: true }
+
         }
       ]
     }

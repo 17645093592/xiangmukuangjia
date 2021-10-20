@@ -47,13 +47,13 @@ export default {
 /* index内部 */
 .index-container {
   width: 100%;
-  padding: $index-head-height 0 0 $index-side-width;
+  padding: 35px 0 0 $index-side-width;
   background: $index-background;
   box-sizing: border-box;
   overflow: auto;
 }
 .footer-item {
-  height: 70px;
+  height: 100px;
   // position: relative;
   // top: 25px;
 }

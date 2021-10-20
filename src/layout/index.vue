@@ -2,7 +2,9 @@
   <div  :style="{ minWidth: global.BROWSER_MIN_WIDTH + `px`, height: windowHeight }">
       <navbar></navbar>
       <sidebar></sidebar>
+      <!-- <Header></Header> -->
       <app-main></app-main>
+
   </div>
 </template>
 
@@ -10,6 +12,7 @@
 import AppMain from './components/AppMain.vue'
 import Navbar from './components/Navbar.vue'
 import Sidebar from './components/Sidebar.vue'
+import Header from '@/components/bread-tag'
 import { debounce } from '@/utils/util'
 export default {
   data() {
@@ -38,7 +41,8 @@ export default {
   components: {
     AppMain,
     Sidebar,
-    Navbar
+    Navbar,
+    Header
 
   }
 }

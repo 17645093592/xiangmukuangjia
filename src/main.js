@@ -6,6 +6,8 @@ import router from './router'
 import ElementUI from 'element-ui';
 import utils from '@/utils/util.js'
 import global from '@/utils/global.js'
+import components from '@/components'
+
 // import MyhttpServer from '@/utils/http'
 import 'element-ui/lib/theme-chalk/index.css';
 
@@ -14,6 +16,8 @@ Vue.config.productionTip = false
 Vue.prototype.utils = utils
 Vue.prototype.global = global
 Vue.use(ElementUI);
+Vue.use(components);
+
 // Vue.use(MyhttpServer)
 /* eslint-disable no-new */
 new Vue({
