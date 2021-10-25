@@ -21,13 +21,6 @@ export default {
       windowHeight: ''
     }
   },
-  beforeCreate() {
-    const token = localStorage.getItem('token')
-
-    if(!token){
-      this.$router.push({name:'login'})
-    }
-  },
   created() {
     this.getHeight()
     window.onresize = debounce(this.getHeight, 300)

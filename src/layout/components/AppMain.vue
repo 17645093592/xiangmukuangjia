@@ -53,7 +53,7 @@ export default {
   overflow: auto;
 }
 .footer-item {
-  height: 100px;
+  // height: 100px;
   // position: relative;
   // top: 25px;
 }

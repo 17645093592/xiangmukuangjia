@@ -123,7 +123,10 @@ export default {
           })
       })
       this.sideList = res.data
+
       this.treeList = this.treeConvertList(res.data)
+      localStorage.setItem('treeList',JSON.stringify(res.data))
+
        this.changeRouter()
 
     },

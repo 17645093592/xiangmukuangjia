@@ -1,0 +1,98 @@
+@import './global.scss';
+
+/*----------------element-ui公共组件样式修改------------------*/
+/* 输入框 */
+.el-input .el-input__clear {line-height: 40px;}
+/* 表格-----表格内容文字居中 */
+.el-table th.gutter {display: table-cell !important;}
+.cell {text-align: center !important;}
+.table-align-left {text-align: left !important;}
+.el-table button {padding: 0;}
+/* 表格-----修改标题颜色、背景颜色 */
+.el-table thead {color: $default-color !important;}
+.el-table__header tr, .el-table__header th {background: $table-thead-bgcolor !important;}
+.el-table__row--striped td {background: $table-tr-bgcolor !important;}
+/* 表格-----去除横向border */
+.el-table th.is-leaf {border-bottom: none;}
+/* 表单-----表单label+padding */
+.el-form-item__label {padding-right: 20px;}
+/* 表单-----textarea改成和input一样的样式 */
+.el-textarea__inner {font-family: "microsoft yahei";padding: 8px 15px;}
+/* 表单-----选择框报错 */
+.error-input input, .error-input textarea {border-color: $error-color !important;}
+/* 分页------分页文字加Border */
+.el-pagination.is-background .el-pager li, .btn-prev span, .btn-next span {border: 1px solid $common-border;border-radius: 5px;background: #fff;}
+/* 分页------'上一页' '下一页'文字悬停 + 禁止点击颜色 */
+.page-item {margin: 30px 0 !important; } 
+.el-pagination{display: flex;align-items: center;height: 32px;padding: 0;}
+.el-pagination__total{margin: 0 15px 0 32px;}
+.el-pagination__jump{margin-left: 7px;}
+// .btn-prev span, .btn-next span {padding: 0 10px;}
+// .btn-prev span:hover, .btn-next span:hover {color: $primary-color;}
+// .btn-prev:disabled span, .btn-next:disabled span {color: $common-disabled;font-size: $default-size;height: 30px !important;line-height: 28px !important;}
+// .el-pagination span:not([class*=suffix]), .el-pager li {height: 30px !important;line-height: 28px !important;}
+.el-dialog__wrapper .el-button--default span {color: $common-placeholder;}
+.el-dialog__wrapper .el-button--default:hover span {color: $primary-color;}
+/* 进度条 */
+.el-progress__text {color: $primary-color;font-size: 24px;padding-left: 10px;}
+/* 审核按钮颜色的改变*/
+.cancelButton {background-color: $error-color;color: #fff;border-color: $error-color;}
+.cancelButton:hover {background-color: $error-color;color: #fff;border-color: $common-placeholder;}
+.confirmButton:hover {border-color: $common-placeholder;}
+/* 状态文字 */
+.status-item{height: 20px;line-height: 20px;font-size: $small-size;border: 1px solid $common-border;padding: 0 6px!important;display: inline;border-radius: $common-border-radius;}
+.error-status{color: #F56C6C;border-color: #FDE2E2;background: #FEF0F0;}
+.success-status{color: #67C23A;border-color: #E1F3D8;background: #F0F9EB;}
+/* disabled按钮 */
+.el-button--success.is-plain.is-disabled,.el-button--warning.is-plain.is-disabled,.el-button--danger.is-plain.is-disabled,.el-button--text.is-disabled,.el-button--primary.is-plain.is-disabled{color: $common-disabled!important;background: transparent!important;border: none!important;}
+.el-button--text.is-disabled:hover,.el-button--text.is-disabled:active{color: $common-disabled!important;}
+button.is-disabled{background: $common-disabled!important;}
+/* plain按钮 */
+.el-button--success.is-plain,.el-button--warning.is-plain,.el-button--danger.is-plain,.el-button--primary.is-plain{background: #fff;}
+/* mini按钮 */
+.el-table .el-button--mini,.el-button--mini{padding: 5px 10px;border-radius: 4px;}
+
+/* 弹框主体大小 位置 */
+.default-dialog .el-dialog {max-height: 80vh;margin: 0 auto;overflow-y: auto;border-radius: 8px;padding: 16px;}
+.default-dialog .el-dialog__header{padding:0 0 16px 0;border-bottom: 1px solid $common-border;margin-bottom: 20px;}
+.default-dialog .el-dialog__body{padding: 0;}
+.default-dialog .el-dialog__footer {padding: 25px 0 0 16px;}
+/* 弹框主标题和关闭按钮 */
+.el-dialog__title {color: $black-color;font-size: $large-size;line-height: $large-line-height;font-weight: 500;}
+.default-dialog .el-dialog__headerbtn{font-size: $large-line-height;color: $common-icon;top: 18px;}
+/* 确认取消按钮 */
+.default-dialog .el-dialog__footer .el-button{height: 40px;line-height: 40px;padding: 0 35px;}
+/* 弹框分割线*/
+.dialog-separate {width: 600px;height: 1px;background: $common-line;margin: 5px auto;}
+/* 弹框input*/
+.default-dialog .el-input__inner, .default-dialog .el-textarea__inner, .default-dialog .el-select, .default-dialog .el-date-editor.el-input {width: 100%;}
+
+
+/* index页------菜单二级侧栏title，arrow箭头 隐藏 */
+.el-menu-item-group__title,.el-submenu__icon-arrow {display: none;}
+/* 清除一级菜单、二级菜单focus */
+.el-menu-item:focus, .el-menu-item:hover, .el-submenu__title:focus, .el-submenu__title:hover {background: none;}
+/* 清除菜单过渡效果 */
+.el-menu-item{transition: none;}
+/*
+ * index页----- 一级侧栏配置
+ *一级侧栏 & 带二级侧栏的一级侧栏
+ */
+/* 默认状态 */
+.el-menu-item,.el-submenu__title{height: 54px;line-height: 54px;padding: 0 8px 0 12px!important;border-left: 4px solid transparent;}
+/* 悬停 */
+.el-menu-item:hover,.el-submenu__title:hover{background: transparent;}
+.el-menu-item .hover span,.el-submenu__title .hover span{color: #fff;}
+/* 选中 */
+.el-menu-item.is-active{background: $index-side-act-background!important;color: $index-side-act-font!important;border-color: $index-side-act-border!important;}
+/*
+ * index页----- 二级侧栏配置
+ */
+/* 侧栏背景 */
+.el-menu{background: $index-subside-background;}
+/* 默认状态 */
+.el-submenu .el-menu-item{height: 46px;line-height: 46px;padding: 0 32px 0 36px!important;color: $index-subside-font;border-left: 4px solid transparent;}
+/* 悬停 */
+.el-submenu .el-menu-item:hover{color: $index-subside-hover-font!important;background: $index-subside-hover-background;}
+/* 选中 */
+.el-submenu .el-menu-item:active{color: $index-subside-act-font!important;background: $index-subside-act-background;border-color: $index-subside-act-border!important;}

@@ -25,12 +25,15 @@ export default {
             }
         }
     },
+    created(){
+    },
     methods: {
         async login(){
             let res = await Login(this.formdata)
             console.log(res.data, 'res')
             if(res.data){
                     localStorage.setItem('token',res.data.token)
+                    localStorage.setItem('userList',JSON.stringify(res.data))
                     // 跳转登录页面
                     this.$router.push({name:'index'})
 

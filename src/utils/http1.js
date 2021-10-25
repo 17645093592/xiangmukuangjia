@@ -40,6 +40,8 @@ Server.interceptors.response.use(config => {
     Message.error(config.data.meta.msg)
   } else if (config.data.meta.status == 200) {
     Message.success(config.data.meta.msg)
+  }else if (config.data.meta.status == 401) {
+    Message.error(config.data.meta.msg)
   }
   // console.log(config.data, '')
 

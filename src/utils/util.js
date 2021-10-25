@@ -633,6 +633,20 @@ export default class utils {
     })
     return resourceTree
   }
+   // 树型转换线型
+   static treeConvertList(root) {
+    const Root = JSON.parse(JSON.stringify(root))
+    const queue = []
+    queue.push(Root)
+    const node = queue.shift()
+    if(!node) return
+    node.forEach((item) => {
+      queue.push(...item.children)
+    })
+    delete node.children
+    const list = [...node, ...queue]
+    return list
+  }
 }
 /**
  * 函数防抖--在事件被触发n秒后再执行回调，如果在这n秒内又被触发，则重新计时

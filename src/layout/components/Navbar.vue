@@ -4,7 +4,7 @@
     <div class="main-head flex-center-between">
       <p class="version primary-font">{{ global.VERSION }}</p>
       <div class="flex-center banner-right">
-        <span class="admin-name">你好，{{ loginData.nickname }}</span>
+        <span class="admin-name">你好，{{ loginData.username }}</span>
         <img
           src="../../assets/img/index-setting.png"
           class="icon-setting pointer"
@@ -26,9 +26,7 @@
 export default {
     data() {
         return {
-            loginData:{
-                nickname:"111"
-            }
+            loginData:localStorage.getItem('userList')?JSON.parse(localStorage.getItem('userList')) : null
         }
     },
     methods: {
@@ -42,12 +40,14 @@ export default {
           type: 'warning'
         }).then(() => {
           localStorage.removeItem('token')
+          localStorage.removeItem('userList')
+          localStorage.removeItem('treeList')
           sessionStorage.removeItem('tag')
-          this.$router.push('/')
-          this.$message({
-            type: 'success',
-            message: '退出成功!'
-          });
+          this.$router.push({name:'login'})
+          // this.$message({
+          //   type: 'success',
+          //   message: '退出成功!'
+          // });
         }).catch(() => {
           this.$message({
             type: 'info',

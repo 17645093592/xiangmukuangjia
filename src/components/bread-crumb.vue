@@ -34,6 +34,7 @@ export default {
 
 <style scoped lang='scss'>
 .mbx{
-    padding: 30px 17px;
+    // padding: 30px 17px;
+    margin-bottom: 20px;
 }
 </style>

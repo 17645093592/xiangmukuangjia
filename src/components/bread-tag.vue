@@ -91,7 +91,7 @@ export default {
 .box {
   width: 100%;
   // 68 234
-  padding: 0px 0 15px 17px;;
+  padding: 25px 0 15px 17px;;
   background: $index-background;
   box-sizing: border-box;
   overflow: auto;
@@ -115,6 +115,12 @@ export default {
  display: inline-block;
  margin-left: 10px;
 }
+.box /deep/.el-tag.el-tag--info{
+  background-color: #fff;
+    border-color: #e9e9eb;
+    // color: #909399;
+    color: #000;
 
+}
 
 </style>

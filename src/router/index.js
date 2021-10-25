@@ -12,35 +12,94 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: ()=>import('@/views/login')
+      redirect: '/login'
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('@/views/login')
     },
     {
       path: '/index',
       name: 'index',
-      component: ()=>import('@/layout'),
-      children:[
-        {
-          path: '/users',
-          name: 'users',
-          component: ()=>import('@/views/users'),
-           meta: { title: '用户列表', first: true }
-        },
-        {
+      component: () => import('@/layout'),
+    },
+    {
+      //  /inex 路由没用（但需要设置） 目的是获取meta 如果页面只有一级导航 路由写在下面children里
+      path: '/user',
+      name: 'user',
+      // redirect: url,
+      component: () => import('@/layout/index.vue'),
+      meta: {
+        title: '用户管理',
+        first: true
+      },
+      children: [{
+        path: '/users',
+        name: 'users',
+        component: () => import('@/views/users'),
+        meta: {
+          title: '用户列表',
+          first: true
+        }
+      }, ]
+    },
+    {
+      //  /inex 路由没用（但需要设置） 目的是获取meta 如果页面只有一级导航 路由写在下面children里
+      path: '/quanxian',
+      name: 'quanxian',
+      // redirect: url,
+      component: () => import('@/layout/index.vue'),
+      meta: {
+        title: '权限管理',
+        first: true
+      },
+      children: [{
           path: '/roles',
           name: 'roles',
-          component: ()=>import('@/views/roles'),
-          meta: { title: '角色列表', first: true }
+          component: () => import('@/views/permission/roles'),
+          meta: {
+            title: '角色列表',
+            first: true
+          }
 
         },
         {
           path: '/rights',
           name: 'rights',
-          component: ()=>import('@/views/rights'),
-          meta: { title: '权限列表', first: true }
+          component: () => import('@/views/permission/rights'),
+          meta: {
+            title: '权限列表',
+            first: true
+          }
 
         }
       ]
-    }
+    },
+    {
+      path: '/goods',
+      component: () => import('@/layout/index.vue'),
+      meta: {
+        title: '商品管理',
+        first: true
+      },
+      children:[
+        {
+          path: '/goods',
+          name: 'goods',
+          component: () => import('@/views/goods/goodsadd'),
+          meta: {
+            title: '商品列表',
+            first: true
+          }
+
+        },
+      ]
+    },
+    {
+      path: '/404',
+      component: () => import('@/views/404.vue')
+    },
+    { path: '*', redirect: '/404', hidden: true }
   ]
 })

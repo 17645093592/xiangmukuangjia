@@ -13,12 +13,12 @@ const global = {
   // 浏览器最小宽度
   BROWSER_MIN_WIDTH: 1200,
   // 分页设置
-  SIZE_LIST: [10, 20, 30, 40],
+  SIZE_LIST: [5, 20, 30, 40],
   PAGE_ITEM() {
     return {
       total: 1,
-      pageNum: 1,
-      pageSize: global.SIZE_LIST[0]
+      pagenum: 1,
+      pagesize: global.SIZE_LIST[0]
     }
   },
   // -------------------- ajax --------------------

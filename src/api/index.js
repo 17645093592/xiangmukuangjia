@@ -1,15 +1,15 @@
 import Service from '../utils/http1'
 // 头部和项目工作量
-export function Login(params) {
+export function Login(data) {
   return Service({
       url:'login',
-      params
+      data
   })
 }
-export function getmenus(data) {
+export function getmenus(params) {
     return Service({
       url: 'menus',
       method: 'get',
-      data
+      params
     })
   }

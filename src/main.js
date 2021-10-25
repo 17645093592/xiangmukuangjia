@@ -10,8 +10,10 @@ import components from '@/components'
 
 // import MyhttpServer from '@/utils/http'
 import 'element-ui/lib/theme-chalk/index.css';
+import './permission.js'
 
 import './styles/global.scss'
+import './styles/element.scss'
 Vue.config.productionTip = false
 Vue.prototype.utils = utils
 Vue.prototype.global = global
